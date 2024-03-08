@@ -1,0 +1,12 @@
+oauth2:
+  users:
+    google:
+      client-id: 1089824765759-q2bgds4v0ib9tcf6771n0qiafp69tjkv.apps.googleusercontent.com
+      client-secret: ${GOOGLE-CLIENT_SECRET:EMPTY}
+      redirect-uri: http://localhost:8080/oauth/google/callback
+      scope: email
+  providers:
+    google:
+      token-uri: none
+      user-info-uri: none
+      authorization-uri: https://accounts.google.com/o/oauth2/v2/auth?client_id=%s&redirect_uri=%s&response_type=code&scope=%s
