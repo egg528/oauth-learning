@@ -17,7 +17,7 @@ public class OauthController {
 
     @GetMapping("/login/{provider}")
     public RedirectView redirect(@PathVariable String provider) {
-        String oauthServerUrl = oauthService.getOauthServerUrl(provider);
+        String oauthServerUrl = oauthService.getLoginPageUrl(provider);
 
         return new RedirectView(oauthServerUrl);
     }
