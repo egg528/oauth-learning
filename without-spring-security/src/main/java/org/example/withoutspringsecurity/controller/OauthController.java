@@ -2,10 +2,7 @@ package org.example.withoutspringsecurity.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.withoutspringsecurity.service.OauthService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
@@ -20,5 +17,13 @@ public class OauthController {
         String oauthServerUrl = oauthService.getLoginPageUrl(provider);
 
         return new RedirectView(oauthServerUrl);
+    }
+
+    @GetMapping("/callback/{provider}")
+    public String callback(@PathVariable String provider, @RequestParam String code) {
+
+        oauthService.login(provider, code);
+
+        return code;
     }
 }

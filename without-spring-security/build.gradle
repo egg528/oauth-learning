@@ -33,7 +33,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-configuration-processor'
 
     // client
-    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
     // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
