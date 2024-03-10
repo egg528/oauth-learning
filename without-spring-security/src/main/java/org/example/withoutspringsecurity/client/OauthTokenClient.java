@@ -1,7 +1,7 @@
 package org.example.withoutspringsecurity.client;
 
 import org.example.withoutspringsecurity.config.WebClientConfig;
-import org.example.withoutspringsecurity.data.OauthProvider;
+import org.example.withoutspringsecurity.repository.OauthProvider;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
@@ -32,7 +32,7 @@ public class OauthTokenClient {
     }
 
     private MultiValueMap<String, String> tokenRequest(OauthProvider provider, String code) {
-        MultiValueMap<String, String> formData = new LinkedMultiValueMap<>().;
+        MultiValueMap<String, String> formData = new LinkedMultiValueMap<>();
         formData.add("code", code);
         formData.add("client_id", provider.clientId());
         formData.add("client_secret", provider.clientSecret());

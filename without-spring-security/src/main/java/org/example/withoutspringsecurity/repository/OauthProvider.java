@@ -1,4 +1,4 @@
-package org.example.withoutspringsecurity.data;
+package org.example.withoutspringsecurity.repository;
 
 import org.example.withoutspringsecurity.props.OauthProps.*;
 

@@ -1,3 +1,10 @@
+jwt:
+  access-token:
+    expire-time: ${SECRET-KEY:10000}
+  refresh-token:
+    expire-time: ${REFRESH-EXPIRE-TIME:10000}
+  secret-key: ${SECRET-KEY:SECRET-KEY}
+
 oauth2:
   user:
     google:

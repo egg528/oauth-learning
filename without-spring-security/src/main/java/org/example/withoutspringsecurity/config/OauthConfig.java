@@ -1,7 +1,7 @@
 package org.example.withoutspringsecurity.config;
 
 import lombok.RequiredArgsConstructor;
-import org.example.withoutspringsecurity.data.OauthProvider;
+import org.example.withoutspringsecurity.repository.OauthProvider;
 import org.example.withoutspringsecurity.props.OauthProps;
 import org.example.withoutspringsecurity.repository.InMemoryProviderRepository;
 import org.springframework.context.annotation.Bean;

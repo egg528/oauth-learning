@@ -35,12 +35,16 @@ dependencies {
     // client
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
-    // test
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
     // lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // jwt
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+
+    // test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {

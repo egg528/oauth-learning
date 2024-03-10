@@ -1,7 +1,9 @@
 package org.example.withoutspringsecurity.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.example.withoutspringsecurity.service.LoginResponse;
 import org.example.withoutspringsecurity.service.OauthService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -20,10 +22,8 @@ public class OauthController {
     }
 
     @GetMapping("/callback/{provider}")
-    public String callback(@PathVariable String provider, @RequestParam String code) {
+    public ResponseEntity<LoginResponse> callback(@PathVariable String provider, @RequestParam String code) {
 
-        oauthService.login(provider, code);
-
-        return code;
+        return ResponseEntity.ok(oauthService.login(provider, code));
     }
 }
